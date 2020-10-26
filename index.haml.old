@@ -1,0 +1,388 @@
+!!!
+%html
+  %head
+    %title Kompromis jagielloński
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, maximum-scale = 1, minimum-scale=1", name: "viewport"}/
+    %link{href: "css/default.css", media: "all", rel: "stylesheet", type: "text/css"}/
+    %link{href: "css/flexslider.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "css/fixed-navigation.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "http://fonts.googleapis.com/css?family=PT+Sans", rel: "stylesheet", type: "text/css"}/
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
+    %script{src: "js/jquery.flexslider.js"}
+    %script{src: "js/default.js"}
+    %script{src: "https://maps.google.com/maps/api/js?sensor=false", type: "text/javascript"}
+    %script{type: "text/x-mathjax-config"}
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    %script{src: "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", type: "text/javascript"}
+    :javascript
+      function initialize() {
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+      }
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+  %body{onload: "initialize()"}
+    #pagewidth
+      %header#header
+        .center
+          %nav#mainNav
+            %ul
+              %li
+                %a{href: "#compromise"}
+                  %span Kompromis
+              %li
+                %a{href: "#systems"}
+                  %span Systemy
+              %li
+                %a{href: "#dictionary"}
+                  %span Słownik
+              %li
+                %a{href: "#articles"}
+                  %span Artykuły
+              %li
+                %a{href: "#literature"}
+                  %span Litertura
+              %li
+                %a{href: 'english.html'}
+                  %span English
+      #content
+        %section.row
+          .center
+            %h1 Kompromis jagielloński
+            %img.transparent{src: 'euro-root.png'}
+            %article.half
+              %div
+                %p
+                  witryna Wojciecha Słomczynskiego$^*$  oraz  Karola Życzkowskiego$^{**}$
+                %p
+                  $^*$ Instytut Matematyki UJ
+                %p
+                  $^{**}$ Instytut Fizyki UJ
+        %section#compromise.row.grey
+          .center
+            %h1 Kompromis jagielloński
+            %strong.subHeading bezstronny system głosowania w Radzie Unii Europejskiej
+            .columns
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"}
+                      Kompromis
+                      Jagielloński
+                  .content
+                    %p
+                      Każdy kraj otrzymuje liczbę głosów proporcjonalną do pierwiastka kwadratowego z liczby jego
+                      ludności. Decyzja Rady Unii Europejskiej zostaje podjęta, jeżeli sumaryczna waga krajów
+                      głosujących za nią przekracza próg wynoszący (dla 27 krajów Unii)
+                      %span.bold 61.4%
+                      wszystkich głosów
+                    %p
+                      %a{href: '#dictionary'} Optymalny próg większości kwalifikowanej
+                      dobrano tak, aby siła głosu każdego państwa mierzona
+                      %a{href: '#dictionary'} wskaźnikiem Penrose’a-Banzhafa
+                      była w przybliżeniu równa wadze jego głosu proporcjonalnej do pierwiastka z liczby ludności.
+                      Z prawa pierwiastkowego Penrose’a wynika wówczas, że siła głosu każdego obywatela Unii będzie
+                      wówczas taka sama. Dla Unii złożonej z $M$ państw, z ludnością odpowiednio $N_1$, $N_2$, $N_M$,
+                      próg większości kwalifikowanej wynosi:
+                      $$q=\frac{1}{2}\left( 1 + \frac{\sqrt{N_1+\ldots+N_M}}{\sqrt{N_1}+\ldots+\sqrt{N_M}} \right)$$
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"}
+                      Próg optymalny: wzór przybliżony
+                  .content
+                    %p
+                      Jeżeli dokładna liczba ludności każdego kraju nie jest znana, można stosować wzór przybliżony,
+                      w którym wartość progu $q_*$ zależy wyłącznie od liczby $M$ państw członkowskich Unii:
+                      $$q_*=\frac{1}{2}+\frac{1}{\sqrt{\pi M}}$$
+                    %p
+                      Wzór ten jest wyprowadzony przy założeniu że liczba $M$ jest stosunkowo duża, a populacje krajach
+                      członkowskich rozłożone są losowo z jednorodną miarą na sympleksie rozkładów prawdopodobieństwa.
+                      W praktyce daje dobre przybliżenie dla $M$ nie mniejszego niż 20.
+                    %p
+                      Przy dalszym rozszerzeniu Unii próg ten powinien stopniowo się zmniejszać, co zapewnia stałą
+                      efektywność systemu -
+                      %span.bold globalny wskaźnik Colemana
+                      określający prawdopodobieństwo utworzenia koalicji wygrywającej wyniesie około 16% niezależnie od
+                      wielkości Unii
+        %section.row
+          .center
+            .columns
+              .half
+                %div
+                  %img{src: 'img/opt_tresh.jpg'}
+                %p
+                  Zależnosc siły głosu jednego obywatela wybranych państw Unii w funkcji progu większości
+                  kwalifikowanej $q$. Jeśli $q$ jest w przybliżeniu równe wartości
+                  %a.animate{href: '#compromise2'}"optymalnego progu"
+                  $q_*$ to siły głosu obywateli w każdym kraju Unii, mierzone wskaźnikiem Penrose'a-Banzhafa stają
+                  się równe.
+              .half
+                %img{src: 'img/square.jpg'}
+                %p
+                  Według Kompromisu Jagiellońskiego przedstawiciel danego państwa dysponuje podczas głosowania
+                  w Radzie Unii Europejskiej liczbą głosów proporcjonalną do długości boku kwadratu,
+                  którego pole odpowiada liczbie jego mieszkańców.
+              .half
+                %img{src: 'img/vote_power.png'}
+                %p
+                  Porównanie siły głosu czterach krajów EU-27 mierzonej wskaźnikiem Penrose'a-Banzhafa: dla systemu
+                  nicejksiego (kolor niebieski), dla proponowanego Kompromisu Jagiellońskiego (kolor zielony) oraz dla
+                  Traktatu Lizbońskiego (kolor czerwony).
+              .half
+                %table
+                  %tr
+                    %th{rowspan: "2"} Kraj
+                    %th{colspan: "3"} Waga głosu
+                  %tr
+                    %th System z Lizbony
+                    %th Kompromis Jaegielloński
+                    %th Syztem nicejski
+                  %tr
+                    %td Niemcy
+                    %td 82.4
+                    %td 34
+                    %td 29
+                  %tr
+                    %td Francja
+                    %td 62.9
+                    %td 30
+                    %td 29
+                %p
+                  Porównanie wag głosu krajów EU-27: ilość mieszkańców z milionach (system z Lizbony); zaokrąglone wagi
+                  proporcjonalne do pierwiastka kwadratowego z liczby mieszkańców (Kompromis Jagielloński);
+                  wagi (system nicejski)
+        %section#compromise2.row.grey
+          .center
+            .columns
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"} Prawo pierwiastkowe Penrose’a
+                  .content
+                    %p
+                      Stwierdza, że gdy zarówno obywatele w każdym państwie, jak i poszczególne państwa głosują
+                      niezależnie od siebie, to
+                      %a{href: '#dictionary'}siła głosu
+                      każdego obywatela w każdym kraju będzie taka sama, gdy siła głosu każdego państwa będzie
+                      proporcjonalna do pierwiastka z liczby jego ludności.
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"}
+                      Optymalny
+                      próg
+                  .content
+                    %p
+                      Próg
+                      %a{href: '#dictionary'} większości kwalifikowanej,
+                      dla którego
+                      %a{href: '#dictionary'} siła głosu
+                      każdego państwa mierzona
+                      %a{href: '#dictionary'} wskaźnikiem Penrose’a-Banzhafa
+                      jest z dobrym przybliżeniem równa jego
+                      %a{href: '#dictionary'} wadze głosu. Jego istnienie wynika z
+                      %span.bold centralnego twierdzenia granicznego.
+                      Gdy waga głosu $i$-tego państwa ($i = 1, \ldots, M$) wynosi $w_i$, to
+                      optymalny próg wyraża się wzorem:
+                      $$q=\frac{1}{2}\left( 1+\sqrt{w_1^2+\ldots+w_M^2} \right)$$
+                    %p
+                      W przypadku, gdy wagi $w_i$ są proporcjonalne do pierwiastków z liczby ludności $N_i$ wzór na
+                      optymalny próg przyjmuje postać:
+                      $$q=\frac{1}{2}\left(1+\frac{\sqrt{N_1+\ldots+N_M}}{\sqrt{N_1}+\ldots+\sqrt{N_M}}\right)$$
+        %section#systems.row
+          .center
+            %h1 Systemy głosowania
+            %strong.subHeading Systemy głosowania w Radzie Unii Europejskiej
+            .columns
+              .half
+                .subHeading System nicejski
+                %h3
+                  Powstał w roku 2001. Obwiązywał w latach 2003-2014.
+                %p
+                  Według traktatu z Nicei, głosy ministrów w Radzie mierzone są wagami, zależnymi w pewien sposób od
+                  liczby ludności w danym kraju. Rada UE podejmuje decyzję, jeżeli spełnione sa jednoczesnie
+                  %span.bold trzy
+                  warunki:
+                %ol
+                  %li
+                    suma wag państw głosujących za ustawą przekroczy 255 (co przy sumie wag 27 państw wynoszącej 345
+                    wynosi w przybliżeniu 74%);
+                  %li
+                    państwa głosujące za ustawą reprezentują co najmniej 62% ludności Unii;
+                  %li
+                    za decyzją głosuje większość krajów, a więc co najmniej 14 z 27.
+                %p
+                  Wynik głosowania jest wiążący, jeśli spełnione są wszystkie trzy warunki, ale jak pokazała analiza
+                  matematyczna najistotniejszy jest warunek pierwszy, gdyż prawdopodobieństwo utworzenia koalicji, która
+                  spełniałaby tylko ten warunek, zaś nie spełniałaby pozostałych warunków jest znikome.
+              .half
+                .subHeading System z Lizbony
+                %h3
+                  Powstał w roku 2008. Obwiązuje od 2014 roku
+                %p Nazywany też często systemem podwójnej większości.
+                %p Do podjęcia decyzji przez Radę UE potrzebne jest spełnienie dwóch warunków:
+                %ol
+                  %li kraje popierające decyzję muszą skupiać co najmniej 65% ludności Unii;
+                  %li za decyzją musi głosować co najmniej 55% państw (przynajmniej 16 z 28).
+                %p
+                  Dodatkowy warunek stanowi, że mniejszość blokująca musi obejmować co najmniej czterech członków Rady.
+                  Każde rozszerzenie Unii zmienia liczbę państw członkowskich oraz rozkład ludności Unii, a wiec
+                  bezpośrednio wpływa na powyższe warunki.
+        %section#dictionary.row.grey
+          .center
+            %h1 Słownik
+            %strong.subHeading Poniżej przedstawiamy słoniczek ważnych pojęć związanych z kompromisem jagiellońskim
+            .columns
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"} Waga głosu
+                  .content
+                    %p Jest to liczba głosów, którymi dysponuje dany uczestnik głosowania.
+                    %p
+                      Najczęściej wszystkie osoby uprawnione do głosowania podczas posiedzeń różnych ciał kolegialnych
+                      posiadają po jednym głosie, czyli waga głosu każdego z nich jest taka sama.
+                    %p
+                      Problem komplikuje się, gdy uczestnicy głosowania dysponują różną liczbą głosów. Taka sytuacja
+                      może mieć miejsce podczas walnego zebrania wspólnoty mieszkaniowej, gdy waga głosu jest
+                      proporcjonalna do powierzchni posiadanego lokalu. Innych przykładów dostarczają walne zebrania
+                      właścicieli spółek z ograniczoną odpowiedzialnością, na których liczba głosów zależy od liczby
+                      posiadanych udziałów, czy też walne zgromadzenia akcjonariuszy spółki akcyjnej, gdy waga głosu
+                      jest proporcjonalna do liczby posiadanych akcji.
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"} Siła głosu
+                  .content
+                    %p
+                      Jest to wielkość opisująca możliwość wpływu uczestnika głosowania na decyzje podejmowaną w wyniku
+                      głosowania.
+                    %p
+                      Lionel S. Penrose zdefiniował siłę głosu gracza jako prawdopodobieństwo, że w przypadkowo
+                      sformowanej koalicji jego głos jest decydujący
+                    %p Uwaga: Siła głosu nie musi być proporcjonalna do wagi głosu!
+                    %p
+                      Przykładowo, jeżeli w spółce uczestniczy dwóch współwłaścicieli, a umowa spółki stanowi, że
+                      uchwały zgromadzenia właścicieli podejmowane są bezwzględną większością głosów, to wspólnik A
+                      posiadający 51% udziałów może samodzielnie decydować o podjętych uchwałach, więc jego siła głosu
+                      wynosi 100%. Zauważmy, że siła głosu wspólnika B z 49% udziałów wynosi 0%. Jeżeli jednak B
+                      odkupił od A jedynie 2% udziałów sytuacja zmieni się diametralnie. Ten prosty przykład pokazuje
+                      też, że niewielka zmiana wag głosów może spowodować znaczne zmiany rozkładu siły głosów.
+              %br/
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"} Wskaźnik Penrose’a-Banzhafa
+                  .content
+                    %p
+                      W roku 1946 angielski matematyk Lionel S. Penrose zaproponował, aby zdefiniować wskaźnik siły
+                      głosów, obliczając na ile sposobów dany uczestnik głosowania (gracz) może wchodzić z pozostałymi
+                      w koalicje, które uzyskają wymaganą większość. Wskaźnik ten wiąże się z prawdopodobieństwem, że
+                      w przykładowym głosowaniu głos danego gracza będzie decydujący. Pionierska praca Penrose'a nie
+                      została zauważona i doceniona. Dopiero gdy w roku 1965 amerykański prawnik John. F. Banzhaf
+                      przeprowadził niezależnie podobną analizę, przedstawiona metoda szacowania siły głosów stała się
+                      popularna, a odpowiednio znormalizowane wielkości zaproponowane przez Penrose'a nazwano
+                      wskaźnikami Banzhafa. Wskaźnik dla „dyktatora”, który może samodzielnie decydować o wyniku
+                      głosowania wynosi 100%, a dla uczestnika głosowania, od głosu którego wynik głosowania nie zależy
+                      równa się 0%.
+              %article.news.half
+                %div
+                  %h3
+                    %a{href: "#"} Większość kwalifikowana
+                  .content
+                    %p
+                      iektóre decyzje gremium liczącego $N$ głosujących wymagające znacznego poparcia zostają podjęte,
+                      jeżeli liczba głosów za danym wnioskiem jest równa lub większa od liczby $qN$, która nie musi być
+                      liczbą całkowitą. Liczba $1/2 < q < 1$ nazywany jest  progiem większości kwalifikowanej.
+                      Najczęściej $q = 3/5, 2/3$ lub $3/4$.
+                    %p
+                      Przykładowo, konklawe kardynałów wybiera papieża większością 2/3 oddanych głosów. Także niektóre
+                      decyzje Sejmu wymagają kwalifikowanej większości głosów. Do odrzucenia veta Prezydenta potrzebna
+                      jest zgoda co najmniej 3/5, zaś do zmiany Konstytucji 2/3 głosujących posłów. Najtrudniejsze jest
+                      samorozwiązanie się Sejmu, bo w tym przypadku zgodę musi wyrazić 2/3 ogółu posłów.
+        %section#articles.row
+          .center
+            %h1 Nasze artykuły
+            %strong.subHeading Wojciech Słomczyński, Karol Życzkowski - artykuły
+            .columns
+              .oneThird
+                .subHeading Kompromis Jagielloński
+                %ul
+                  %li
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    %a{href: "http://chaos.if.uj.edu.pl/~karol/pdf/rzecz04.html"} Czy warto umierać za Niceę – prawda i mity. Wyliczony kompromis.
+                    %span.italic Rzeczpospolita
+                    %span.bold 25 (6708)
+                    (30 stycznia 2004), A4.
+              .oneThird
+                .subHeading Inne artykuły na temat teorii głosowania
+                %ul
+                  %li
+                    Wojciech Słomczyński,
+                    Dziedzictwo kluczy.
+                    %span.italic Dziennik Polski
+                    %span.bold 90
+                    (2005), 6.
+                  %li
+                    Wojciech Słomczyński, T Rożek
+                    %a{href: "http://chaos.if.uj.edu.pl/~karol/pdf/slomcz09.pdf"} Piękno ukryte w świecie reguł matematycznych
+                    %span.italic National Geographic
+                    (luty 2009)
+                  %li
+                    K Rzążewski, Wojciech Słomczyński, Karol Życzkowski
+                    %a{href: "http://chaos.if.uj.edu.pl/~karol/pdf2/RSZ10.pdf"} Euromatematyka: Jak wybieraliśmy posłów do Parlamentu Europejskiego?
+                    %span.italic Wiedza i Zycie
+                    %span.bold 1
+                    (2010), 22-27.
+              .oneThird
+                .subHeading Listy otwarte
+                %ul
+                  %li
+                    %a{href: "http://chaos.if.uj.edu.pl/~karol/pdf/OtwartyList.pdf"}List otwarty do rządów krajów Unii Europejskiej.
+                    (czerwiec 2004)
+        %section#literature.row.grey
+          .center
+            %h1 Inna literatura dotycząca kompromisu jagiellońskiego
+            .columns
+              .half
+                .subHeading Literatura
+                %ul
+                  %li
+                    A Grzesik
+                    Pierwiastek albo śmierć.
+                    %span.italic Magazyn Miłośników Matematyki
+                    %span.bold 3 (20),
+                    (2007), 31-33.
+              .half
+                .subHeading Komentarze prasowe
+                %ul
+                  %li
+                    Jakub Lubelski
+                    %a{href: "http://chaos.if.uj.edu.pl/~karol/pdf2/lubelski.pdf"} O niezbędności matematyki w polityce
+                    , Centrum Europejskie Natolin, 2011.
+        %section#testiomonialsTab.row
+          .center
+            %h1 Testimonials
+            %strong.subHeading lorem ipsum dolor sit amet, consectetur adipiscing elit
+            #testimonials.gallery
+              %ul.slides
+                %li
+                  .row
+                    %blockquote
+                      %q Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar
+                    %blockquote
+                      %q Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar
+                  .row
+                    %blockquote
+                      %q Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar
+                    %blockquote
+                      %q Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, mas

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kompromis jagielloński</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, maximum-scale = 1, minimum-scale=1' name='viewport'>
+    <link href='css/default.css' media='all' rel='stylesheet' type='text/css'>
+    <link href='css/flexslider.css' rel='stylesheet' type='text/css'>
+    <link href='css/fixed-navigation.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+    <script src='js/jquery.flexslider.js'></script>
+    <script src='js/default.js'></script>
+    <script src='https://maps.google.com/maps/api/js?sensor=false' type='text/javascript'></script>
+    <script type='text/x-mathjax-config'>
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'></script>
+    <script>
+      function initialize() {
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+      }
+    </script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body onload='initialize()'>
+    <div id='top'></div>
+    <div id='pagewidth'>
+      <header id='header'>
+        <div class='center'>
+          <nav id='mainNav'>
+            <ul>
+              <li>
+                <a href='#compromise'>
+                  <span>Kompromis</span>
+                </a>
+              </li>
+              <li>
+                <a href='#systems'>
+                  <span>Systemy głosowania</span>
+                </a>
+              </li>
+              <li>
+                <a href='#dictionary'>
+                  <span>Słownik</span>
+                </a>
+              </li>
+              <li>
+                <a href='#articles'>
+                  <span>Artykuły</span>
+                </a>
+              </li>
+              <li>
+                <a href='#literature'>
+                  <span>Litertura</span>
+                </a>
+              </li>
+              <li>
+                <a href='english.html'>
+                  <span>English</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div id='content'>
+        <section class='row'>
+          <div class='center'>
+            <h1>Kompromis jagielloński</h1>
+            <img class='transparent' src='img/euro-root.png'>
+            <article>
+              <div>
+                <p>
+                  witryna Wojciecha Słomczynskiego$^*$  oraz  Karola Życzkowskiego$^{**}$
+                </p>
+                <div class='center'>
+                  <p>
+                    <span class='spacer'>$^*$ Instytut Matematyki UJ</span>
+                    $^{**}$ Instytut Fizyki UJ
+                  </p>
+                </div>
+              </div>
+            </article>
+            <img src='img/alvner.jpg'>
+          </div>
+        </section>
+        <section class='row grey' id='compromise'>
+          <div class='center'>
+            <h1>Kompromis jagielloński</h1>
+            <strong class='subHeading'>(20-4-2007)</strong>
+            <strong class='subHeading'>bezstronny system głosowania w Radzie Unii Europejskiej</strong>
+            <div class='columns'>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>
+                      Kompromis
+                      Jagielloński
+                    </a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Każdy kraj otrzymuje liczbę głosów proporcjonalną do pierwiastka kwadratowego z liczby jego
+                      ludności. Decyzja Rady Unii Europejskiej zostaje podjęta, jeżeli sumaryczna waga krajów
+                      głosujących za nią przekracza próg wynoszący (dla 27 krajów Unii)
+                      <span class='bold'>61.4%</span>
+                      wszystkich głosów
+                    </p>
+                    <p>
+                      <a href='#dictionary'>Optymalny próg większości kwalifikowanej</a>
+                      dobrano tak, aby siła głosu każdego państwa mierzona
+                      <a href='#dictionary'>wskaźnikiem Penrose’a-Banzhafa</a>
+                      była w przybliżeniu równa wadze jego głosu proporcjonalnej do pierwiastka z liczby ludności.
+                      Z prawa pierwiastkowego Penrose’a wynika wówczas, że siła głosu każdego obywatela Unii będzie
+                      wówczas taka sama. Dla Unii złożonej z $M$ państw, z ludnością odpowiednio $N_1$, $N_2$, $N_M$,
+                      próg większości kwalifikowanej wynosi:
+                      $$q=\frac{1}{2}\left( 1 + \frac{\sqrt{N_1+\ldots+N_M}}{\sqrt{N_1}+\ldots+\sqrt{N_M}} \right)$$
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>
+                      Próg optymalny: wzór przybliżony
+                    </a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Jeżeli dokładna liczba ludności każdego kraju nie jest znana, można stosować wzór przybliżony,
+                      w którym wartość progu $q_*$ zależy wyłącznie od liczby $M$ państw członkowskich Unii:
+                      $$q_*=\frac{1}{2}+\frac{1}{\sqrt{\pi M}}$$
+                    </p>
+                    <p>
+                      Wzór ten jest wyprowadzony przy założeniu że liczba $M$ jest stosunkowo duża, a populacje krajach
+                      członkowskich rozłożone są losowo z jednorodną miarą na sympleksie rozkładów prawdopodobieństwa.
+                      W praktyce daje dobre przybliżenie dla $M$ nie mniejszego niż 20.
+                    </p>
+                    <p>
+                      Przy dalszym rozszerzeniu Unii próg ten powinien stopniowo się zmniejszać, co zapewnia stałą
+                      efektywność systemu -
+                      <span class='bold'>globalny wskaźnik Colemana</span>
+                      określający prawdopodobieństwo utworzenia koalicji wygrywającej wyniesie około 16% niezależnie od
+                      wielkości Unii
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class='row'>
+          <div class='center'>
+            <div class='columns'>
+              <div class='half'>
+                <img src='img/roznice_liz_nicea.jpg'>
+                <p>
+                  a) Traktat z
+                  <span class='bold'>Lizbony</span>
+                  vs Traktat z
+                  <span class='bold'>Nicei</span>
+                </p>
+                <img src='img/roznice_liz_kj.jpg'>
+                <p>
+                  b) Traktat z
+                  <span class='bold'>Lizbony</span>
+                  vs
+                  <span class='bold'>Kompromis Jagielloński</span>
+                </p>
+                <p>
+                  <span class='bold'>Rys. 1.</span>
+                  Porównanie siły głosu mierzonej wskaźnikiem Penrose’a–Banzhafa 27 krajów członkowskich Unii
+                  Europejskiej uporządkowanych wg ludności - dane z roku 2005
+                </p>
+              </div>
+              <div class='half'>
+                <img src='img/square.jpg'>
+                <p>
+                  <span class='bold'>Rys. 2.</span>
+                  Według Kompromisu Jagiellońskiego przedstawiciel danego państwa dysponuje podczas głosowania
+                  w Radzie Unii Europejskiej liczbą głosów proporcjonalną do długości boku kwadratu,
+                  którego pole odpowiada liczbie jego mieszkańców.
+                </p>
+              </div>
+              <div class='half'>
+                <div>
+                  <img src='img/opt_tresh.jpg'>
+                </div>
+                <p>
+                  <span class='bold'>Rys. 3.</span>
+                  Zależnosc siły głosu jednego obywatela wybranych państw Unii w funkcji progu większości
+                  kwalifikowanej $q$. Jeśli $q$ jest w przybliżeniu równe wartości
+                  <a class='animate' href='#compromise2'>"optymalnego progu"</a>
+                  $q_*$ to siły głosu obywateli w każdym kraju Unii, mierzone wskaźnikiem Penrose'a-Banzhafa stają
+                  się równe.
+                </p>
+              </div>
+              <div class='half'>
+                <img src='img/vote_power.png'>
+                <p>
+                  <span class='bold'>Rys. 4.</span>
+                  Porównanie siły głosu czterach krajów EU-27 mierzonej wskaźnikiem Penrose'a-Banzhafa: dla systemu
+                  nicejksiego (kolor niebieski), dla proponowanego Kompromisu Jagiellońskiego (kolor zielony) oraz dla
+                  Traktatu Lizbońskiego (kolor czerwony).
+                </p>
+              </div>
+              <br>
+              <div class='half'>
+                <img src='img/tabela_2pl.jpg'>
+                <p>
+                  <span class='bold'>Tab. 1.</span>
+                  Porównanie siły głosu 27 państw członkowskich Unii; w kolumnach: liczba ludności; siła głosu mierzona
+                  indeksem
+                  <a class='animate' href='#dictionary'>Penrose’a–Banzhafa</a>
+                  (w %) wg traktatu z Lizbony; waga i  siła głosu wg Kompromisu
+                  Jagiellońskiego z progiem q = 61,6%. Obliczenia z roku 2006.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class='row grey' id='compromise2'>
+          <div class='center'>
+            <div class='columns'>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Prawo pierwiastkowe Penrose’a</a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Stwierdza, że gdy zarówno obywatele w każdym państwie, jak i poszczególne państwa głosują
+                      niezależnie od siebie, to
+                      <a href='#dictionary'>siła głosu</a>
+                      każdego obywatela w każdym kraju będzie taka sama, gdy siła głosu każdego państwa będzie
+                      proporcjonalna do pierwiastka z liczby jego ludności.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>
+                      Optymalny
+                      próg
+                    </a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Próg
+                      <a href='#dictionary'>większości kwalifikowanej,</a>
+                      dla którego
+                      <a href='#dictionary'>siła głosu</a>
+                      każdego państwa mierzona
+                      <a href='#dictionary'>wskaźnikiem Penrose’a-Banzhafa</a>
+                      jest z dobrym przybliżeniem równa jego
+                      <a href='#dictionary'>wadze głosu. Jego istnienie wynika z</a>
+                      <span class='bold'>centralnego twierdzenia granicznego.</span>
+                      Gdy waga głosu $i$-tego państwa ($i = 1, \ldots, M$) wynosi $w_i$, to
+                      optymalny próg wyraża się wzorem:
+                      $$q=\frac{1}{2}\left( 1+\sqrt{w_1^2+\ldots+w_M^2} \right)$$
+                    </p>
+                    <p>
+                      W przypadku, gdy wagi $w_i$ są proporcjonalne do pierwiastków z liczby ludności $N_i$ wzór na
+                      optymalny próg przyjmuje postać:
+                      $$q=\frac{1}{2}\left(1+\frac{\sqrt{N_1+\ldots+N_M}}{\sqrt{N_1}+\ldots+\sqrt{N_M}}\right)$$
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class='row' id='systems'>
+          <div class='center'>
+            <h1>Systemy głosowania w Radzie Unii Europejskiej</h1>
+            <div class='columns'>
+              <div class='half'>
+                <div class='subHeading'>System nicejski</div>
+                <h3>
+                  Powstał w roku 2001. Obwiązywał w latach 2003-2014.
+                </h3>
+                <p>
+                  Według traktatu z Nicei, głosy ministrów w Radzie mierzone są wagami, zależnymi w pewien sposób od
+                  liczby ludności w danym kraju. Rada UE podejmuje decyzję, jeżeli spełnione sa jednoczesnie
+                  <span class='bold'>trzy</span>
+                  warunki:
+                </p>
+                <ol>
+                  <li>
+                    suma wag państw głosujących za ustawą przekroczy 255 (co przy sumie wag 27 państw wynoszącej 345
+                    wynosi w przybliżeniu 74%);
+                  </li>
+                  <li>
+                    państwa głosujące za ustawą reprezentują co najmniej 62% ludności Unii;
+                  </li>
+                  <li>
+                    za decyzją głosuje większość krajów, a więc co najmniej 14 z 27.
+                  </li>
+                </ol>
+                <p>
+                  Wynik głosowania jest wiążący, jeśli spełnione są wszystkie trzy warunki, ale jak pokazała analiza
+                  matematyczna najistotniejszy jest warunek pierwszy, gdyż prawdopodobieństwo utworzenia koalicji, która
+                  spełniałaby tylko ten warunek, zaś nie spełniałaby pozostałych warunków jest znikome.
+                </p>
+              </div>
+              <div class='half'>
+                <div class='subHeading'>System z Lizbony</div>
+                <h3>
+                  Powstał w roku 2008. Obwiązuje od 2014 roku
+                </h3>
+                <p>Nazywany też często systemem podwójnej większości.</p>
+                <p>Do podjęcia decyzji przez Radę UE potrzebne jest spełnienie dwóch warunków:</p>
+                <ol>
+                  <li>kraje popierające decyzję muszą skupiać co najmniej 65% ludności Unii;</li>
+                  <li>za decyzją musi głosować co najmniej 55% państw (przynajmniej 16 z 28).</li>
+                </ol>
+                <p>
+                  Dodatkowy warunek stanowi, że mniejszość blokująca musi obejmować co najmniej czterech członków Rady.
+                  Każde rozszerzenie Unii zmienia liczbę państw członkowskich oraz rozkład ludności Unii, a wiec
+                  bezpośrednio wpływa na powyższe warunki.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class='row grey' id='dictionary'>
+          <div class='center'>
+            <h1>Słownik</h1>
+            <strong class='subHeading'>Poniżej przedstawiamy słowniczek ważnych pojęć związanych z kompromisem jagiellońskim</strong>
+            <div class='columns'>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Waga głosu</a>
+                  </h3>
+                  <div class='content'>
+                    <p>Jest to liczba głosów, którymi dysponuje dany uczestnik głosowania.</p>
+                    <p>
+                      Najczęściej wszystkie osoby uprawnione do głosowania podczas posiedzeń różnych ciał kolegialnych
+                      posiadają po jednym głosie, czyli waga głosu każdego z nich jest taka sama.
+                    </p>
+                    <p>
+                      Problem komplikuje się, gdy uczestnicy głosowania dysponują różną liczbą głosów. Taka sytuacja
+                      może mieć miejsce podczas walnego zebrania wspólnoty mieszkaniowej, gdy waga głosu jest
+                      proporcjonalna do powierzchni posiadanego lokalu. Innych przykładów dostarczają walne zebrania
+                      właścicieli spółek z ograniczoną odpowiedzialnością, na których liczba głosów zależy od liczby
+                      posiadanych udziałów, czy też walne zgromadzenia akcjonariuszy spółki akcyjnej, gdy waga głosu
+                      jest proporcjonalna do liczby posiadanych akcji.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Siła głosu</a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Jest to wielkość opisująca możliwość wpływu uczestnika głosowania na decyzje podejmowaną w wyniku
+                      głosowania.
+                    </p>
+                    <p>
+                      Lionel S. Penrose zdefiniował siłę głosu gracza jako prawdopodobieństwo, że w przypadkowo
+                      sformowanej koalicji jego głos jest decydujący
+                    </p>
+                    <p class='bold'>Uwaga: Siła głosu nie musi być proporcjonalna do wagi głosu!</p>
+                    <p class='bold'>
+                      <span class='italic'>Niewielka</span>
+                      zmiana wag głosów może spowodować
+                      <span class='italic'>znaczne</span>
+                      zmiany rozkładu siły głosów
+                    </p>
+                    <p>
+                      Przykładowo, jeżeli w spółce uczestniczy dwóch współwłaścicieli, a umowa spółki stanowi, że
+                      uchwały zgromadzenia właścicieli podejmowane są bezwzględną większością głosów, to wspólnik A
+                      posiadający 51% udziałów może samodzielnie decydować o podjętych uchwałach, więc jego siła głosu
+                      wynosi 100%. Zauważmy, że siła głosu wspólnika B z 49% udziałów wynosi 0%. Jeżeli jednak B
+                      odkupił od A jedynie 2% udziałów sytuacja zmieni się diametralnie. Ten prosty przykład pokazuje
+                      też, że niewielka zmiana wag głosów może spowodować znaczne zmiany rozkładu siły głosów.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <br>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Wskaźnik Penrose’a-Banzhafa</a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      W roku 1946 angielski matematyk Lionel S. Penrose zaproponował, aby zdefiniować wskaźnik siły
+                      głosów, obliczając na ile sposobów dany uczestnik głosowania (gracz) może wchodzić z pozostałymi
+                      w koalicje, które uzyskają wymaganą większość. Wskaźnik ten wiąże się z prawdopodobieństwem, że
+                      w przykładowym głosowaniu głos danego gracza będzie decydujący. Pionierska praca Penrose'a nie
+                      została zauważona i doceniona. Dopiero gdy w roku 1965 amerykański prawnik John. F. Banzhaf
+                      przeprowadził niezależnie podobną analizę, przedstawiona metoda szacowania siły głosów stała się
+                      popularna, a odpowiednio znormalizowane wielkości zaproponowane przez Penrose'a nazwano
+                      wskaźnikami Banzhafa. Wskaźnik dla „dyktatora”, który może samodzielnie decydować o wyniku
+                      głosowania wynosi 100%, a dla uczestnika głosowania, od głosu którego wynik głosowania nie zależy
+                      równa się 0%.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Większość kwalifikowana</a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Niektóre decyzje gremium liczącego $N$ głosujących wymagające znacznego poparcia zostają podjęte,
+                      jeżeli liczba głosów za danym wnioskiem jest równa lub większa od liczby $qN$, która nie musi być
+                      liczbą całkowitą. Liczba $$1/2 < q < 1$$ nazywany jest
+                      <span class='bold'>progiem większości kwalifikowanej.</span>
+                      Najczęściej $q = 3/5, 2/3$ lub $3/4$.
+                    </p>
+                    <p>
+                      Przykładowo, konklawe kardynałów wybiera papieża większością 2/3 oddanych głosów. Także niektóre
+                      decyzje Sejmu wymagają kwalifikowanej większości głosów. Do odrzucenia veta Prezydenta potrzebna
+                      jest zgoda co najmniej 3/5, zaś do zmiany Konstytucji 2/3 głosujących posłów. Najtrudniejsze jest
+                      samorozwiązanie się Sejmu, bo w tym przypadku zgodę musi wyrazić 2/3 ogółu posłów.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <br>
+              <article class='news half'>
+                <div>
+                  <h3>
+                    <a href='#'>Wskaznik efektywnosci Colemana</a>
+                  </h3>
+                  <div class='content'>
+                    <p>
+                      Jest to prawdopodobieństwo, że przypadkowo utworzona koalicja
+                      (każdy z uczestników gremium głosującego wchodzi do koalicji z prawdopodobieństwem 1/2)
+                      spełni wymagania większości kwalifikowanej i stanie się
+                      <span class='italic'>koalicją wygrywajacą</span>
+                      , a więc będzie w stanie doprowadzić do podjęcia wiążącej decyzji.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <br>
+              <article class='news fourForth'>
+                <div>
+                  <h3>
+                    Linki zewnętrzne
+                  </h3>
+                  <div class='content'>
+                    <ul>
+                      <li>
+                        <a href='http://en.wikipedia.org/wiki/Jagiellonian_Compromise'>Wikipedia angielska</a>
+                      </li>
+                      <li>
+                        <a href='http://pl.wikipedia.org/wiki/Kompromis_Jagiello%C5%84ski'>Wikipedia polska</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class='row' id='articles'>
+          <div class='center'>
+            <h1>Nasze artykuły</h1>
+            <strong class='subHeading'>Wojciech Słomczyński, Karol Życzkowski - artykuły</strong>
+            <div class='columns'>
+              <div class='oneThird'>
+                <div class='subHeading'>Kompromis Jagielloński</div>
+                <ul>
+                  <li>
+                    Kazimierz Rzążewski, Wojciech Słomczyński, Karol Życzkowski,
+                    Każdy głos sie liczy, Wydawnictwo Sejmowe, Warszawa  2014,
+                    <a href='http://kazdyglos.eu/download/komp_jag.pdf'>
+                      Rozdzial 10  Głosowanie pośrednie: Rada Unii Europejskiej
+                    </a>
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/rzecz04.html'>Czy warto umierać za Niceę – prawda i mity. Wyliczony kompromis.</a>
+                    <span class='italic'>Rzeczpospolita</span>
+                    <span class='bold'>25 (6708)</span>
+                    (30 stycznia 2004), A4.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/stresz2.pdf'>Analiza mechanizmów decyzyjnych w Radzie Ministrów UE: Traktat Nicejski, propozycja Konwentu oraz projekt kompromisu</a>
+                    (styczeń 2004).
+                  </li>
+                  <li>
+                    M. Pieńkowski, Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/schumPSZ.pdf'>W poszukiwaniu optymalnego systemu głosowania w Radzie Ministrów Unii Europejskiej.</a>
+                    <span class='italic'>Polski Kalendarz Europejski</span>
+                    <span class='bold'>01-02</span>
+                    (2004), 20-24.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/SZ4pol.pdf'>Zasady głosowania w Radzie UE: analiza matematyczna.</a>
+                    <span class='italic'>Międzynarodowy Przegląd Polityczny</span>
+                    <span class='bold'>7</span>
+                    (2004), 18-39.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, T. Zastawniak, Karol Życzkowski,
+                    <a href='http://www.wprost.pl/ar/?O=61624'>Kompromis Jagielloński. Nicea albo Kraków.</a>
+                    <span class='italic'>Wprost</span>
+                    <span class='bold'>25 (1125)</span>
+                    (2004), 28-30.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/DP2.pdf'>Szansa na kompromis. Liczenie głosów w UE.</a>
+                    <span class='italic'>Dziennik Polski</span>
+                    <span class='bold'>140</span>
+                    (17 czerwca 2004), 8, 14.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/NKK.pdf'>Traktat z Nicei, projekt Konwentu i Konstytucja Europejska. Porównanie mechanizmów decyzyjnych w Radzie Unii Europejskiej.</a>
+                    <span class='italic'>Przegląd Środkowoeuropejski</span>
+                    <span class='bold'>38</span>
+                    (2004), 14-16.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/SZPAU.pdf'>Czy warto (było) umierać za Niceę? Kompromis widziany oczami matematyka i fizyka.</a>
+                    <span class='italic'>Prace Komisji Spraw Europejskich PAU</span>
+                    <span class='bold'>1</span>
+                    (2006), 83-93.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf2/MPP07.pdf'>Kompromis Jagielloński - system głosowania dla Rady Unii Europejskiej.</a>
+                    <span class='italic'>Międzynarodowy Przegląd Polityczny</span>
+                    <span class='bold'>18</span>
+                    (2007), 15-32.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    Pierwiastek dla Europy – zrozumiały i sprawiedliwy.
+                    <span class='italic'>Rzeczpospolita</span>
+                    <span class='bold'>143 (7740)</span>
+                    (21 czerwca 2007), A9.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, Karol Życzkowski,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/KompJag.pdf'>Kompromis Jagielloński – alternatywny system głosowania dla Rady Unii Europejskiej.</a>
+                    (maj 2007) (z K. Życzkowskim) – ekspertyza dla frakcji EPP-ED Parlamentu Europejskiego.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński,
+                    Siła głosu w Unii Europejskiej – próba podsumowania.
+                    <span class='italic'>Międzynarodowy Przegląd Polityczny</span>
+                    <span class='bold'>21</span>
+                    (2008), 226-234.
+                  </li>
+                </ul>
+              </div>
+              <div class='oneThird'>
+                <div class='subHeading'>Inne artykuły na temat teorii głosowania</div>
+                <ul>
+                  <li>
+                    Wojciech Słomczyński,
+                    Dziedzictwo kluczy.
+                    <span class='italic'>Dziennik Polski</span>
+                    <span class='bold'>90</span>
+                    (2005), 6.
+                  </li>
+                  <li>
+                    Wojciech Słomczyński, T Rożek
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/slomcz09.pdf'>Piękno ukryte w świecie reguł matematycznych</a>
+                    <span class='italic'>National Geographic</span>
+                    (luty 2009)
+                  </li>
+                  <li>
+                    Kazimierz Rzążewski, Wojciech Słomczyński, Karol Życzkowski
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf2/RSZ10.pdf'>Euromatematyka: Jak wybieraliśmy posłów do Parlamentu Europejskiego?</a>
+                    <span class='italic'>Wiedza i Zycie</span>
+                    <span class='bold'>1</span>
+                    (2010), 22-27.
+                  </li>
+                  <li>
+                    Kazimierz Rzążewski, Wojciech Słomczyński, Karol Życzkowski
+                    <a href='http://kazdyglos.eu'>Każdy głos się liczy! Wędrówka przez krainę wyborów</a>
+                    Wydawnictwo Sejmowe, Warszawa 2014
+                  </li>
+                </ul>
+              </div>
+              <div class='oneThird'>
+                <div class='subHeading'>Listy otwarte</div>
+                <ul>
+                  <li>
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/OtwartyList.pdf'>List otwarty do rządów krajów Unii Europejskiej.</a>
+                    (czerwiec 2004)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class='row grey' id='literature'>
+          <div class='center'>
+            <h1>Inna literatura dotycząca kompromisu jagiellońskiego</h1>
+            <div class='columns'>
+              <div class='half'>
+                <div class='subHeading'>Literatura</div>
+                <ul>
+                  <li>
+                    Grzesik, A.,
+                    Pierwiastek albo śmierć.
+                    <span class='italic'>Magazyn Miłośników Matematyki</span>
+                    <span class='bold'>3 (20),</span>
+                    (2007), 31-33.
+                  </li>
+                  <li>
+                    Mercik, J.W.
+                    <span class='italic'>Siła i oczekiwanie. Decyzje grupowe.</span>
+                    PWN, Warszawa, (1999).
+                  </li>
+                  <li>
+                    Mober, A.
+                    <span class='italic'>
+                      <a href='download/weight_of_nations.pdf'>The Weight of Nations. Four papers on the institutional</a>
+                      negotiations in the EU 1996-2007
+                    </span>
+                    Malmoe 2014
+                  </li>
+                  <li>
+                    Pukelsheim, F.,  Proportional Representation
+                    Apportionment Methods and Their Applications  (Springer, Heidelberg, 2014),
+                    <a href='http://kazdyglos.eu/download/Pukelsheim14_JC.pdf'>
+                      Chapter 12.10  Jagielonian Compromise
+                    </a>
+                  </li>
+                  <li>
+                    Trzaskowski, R.,
+                    <span class='italic'>Dynamika reformy systemu podejmowania decyzji w Unii Europejskiej.</span>
+                    Wydawnictwo Prawo i Praktyka Gospodarcza., Natolin,
+                    (2005).
+                  </li>
+                  <li>
+                    Straffin, P.D.
+                    <span class='italic'>Teoria gier.</span>
+                    Wydawnictwo Naukowe SCHOLAR, Warszawa,
+                    (2004).
+                  </li>
+                </ul>
+              </div>
+              <div class='half'>
+                <div class='subHeading'>Komentarze prasowe</div>
+                <ul>
+                  <li>
+                    Jakub Lubelski
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf2/lubelski.pdf'>O niezbędności matematyki w polityce</a>
+                    , Centrum Europejskie Natolin, 2011.
+                  </li>
+                  <li>
+                    Andrzej Grajewski
+                    <a href='http://wiadomosci.onet.pl/swiat/pierwiastek-rownowagi/3mg2x'>Pierwiastek równowagi.</a>
+                    <span class='italic'>Gość Niedzielny</span>
+                    (25.06.2007).
+                  </li>
+                  <li>
+                    Arkadiusz Orłowski
+                    <a href='http://wyborcza.pl/1,82048,4242258.html'>Dlaczego matematycy lubią pierwiastek.</a>
+                    <span class='italic'>Gazeta Wyborcza</span>
+                    (22.06.2007).
+                  </li>
+                  <li>
+                    Ewa Ośniecka-Tamecka
+                    <a href='http://wyborcza.pl/1,82048,4242254.html'>Pierwiastek jest (naj)lepszy.</a>
+                    <span class='italic'>Gazeta Wyborcza</span>
+                    (22.06.2007).
+                  </li>
+                  <li>
+                    Wywiad Wojciecha Słomczyńskiego i Karola Życzkowskiego dla radia RMF FM.
+                    <a href='http://www.rmf24.pl/tylko-w-rmf24/wywiady/news-system-pierwiastkowy-jest-obiektywny,nId,180575'>System pierwiastkowy jest obiektywny.</a>
+                    (21.06.2007).
+                  </li>
+                  <li>
+                    Wojciech Słomczyński,
+                    <a href='http://dokwadratu.blogspot.com/2007/06/caa-prawda-o-pierwiastku-profesor.html'>Cała prawda o pierwiastku. Blog</a>
+                    <span class='italic'>Do kwadratu</span>
+                    (18.06.2007).
+                  </li>
+                  <li>
+                    Szymon Mazurek,
+                    Pierwiastek polski. Blog
+                    <span class='italic'>(Nie)główny ekonomista</span>
+                    (15.06.2007).
+                  </li>
+                  <li>
+                    Tadeusz Sozański,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/tsmpp.pdf'>O pierwiastku i mniejszościach blokujących.</a>
+                    (05.2007).
+                  </li>
+                  <li>
+                    Tadeusz Sozański,
+                    <a href='http://www.cyfronet.krakow.pl/~ussozans/komprops.pdf'>Kompromis czy kompromitacja?</a>
+                    <span class='italic'>Dziennik Polski</span>
+                    (22.06.2004).
+                  </li>
+                  <li>
+                    Mikołaj Jasiński,
+                    <a href='http://chaos.if.uj.edu.pl/~karol/pdf/mjasinski04.pdf'>Anatomia porażki, czyli o kompromisie brukselskim.</a>
+                    <span class='italic'>Najwyższy Czas</span>
+                    (czerwiec 2004).
+                  </li>
+                  <li>
+                    Wywiad Wojciecha Słomczyńskiego dla radia BBC Redakcja Polska.
+                    Matematyka i głosy.
+                    (13 czerwca 2004).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class='row' id='final'>
+          <h1>
+            <a href='#top'>Powrót do początku strony</a>
+          </h1>
+          <div class='subHeading'>
+            <p>Autor strony: Łukasz Pawela</p>
+            <p>Ostatnia edycja: 9 marca 2014</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
